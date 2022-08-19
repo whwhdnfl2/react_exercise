@@ -12,6 +12,15 @@ const AddUser = (props) => {
     }
     const UserDataHandler = (event) =>{
         event.preventDefault();
+        if(newUserName.length === 0){
+          props.sendValidTitle();
+          return;
+        }
+
+        if(newUserAge < 0){
+          props.sendValidNumber();
+          return;
+        }
 
         const newData = {
             id: Math.random(),
@@ -27,7 +36,7 @@ const AddUser = (props) => {
         <label>Username</label>
         <input type="text" onChange={UserNameHandler}></input>
         <label>Age(Year)</label>
-        <input type="text" onChange={UserAgeHandler}></input>
+        <input type="number" onChange={UserAgeHandler}></input>
         <button type='submit'>Add User</button>
       </form>
     </div>
