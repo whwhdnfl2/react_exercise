@@ -1,16 +1,16 @@
 import React from "react";
-
-const NoNumber = (props) =>{
-    const returnAddUser = () =>{
-        props.sendTrue();
-    }
+import Card from "../UI/Card";
+import Button from "../UI/Button";
+const NoNumber = (props) => {
+  const returnAddUser = () => {
+    props.sendTrue();
+  };
   return (
-    <div>
+    <Card>
       <p>no number</p>
-      <button onClick={returnAddUser}> okay </button>
-    </div>
+      <Button onClick={returnAddUser}> okay </Button>
+    </Card>
   );
-     
-}
+};
 
 export default NoNumber;

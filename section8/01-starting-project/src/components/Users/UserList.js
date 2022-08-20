@@ -1,14 +1,19 @@
 import React from "react";
-import UserItem from "./UserItem";
+
+import Card from "../UI/Card";
+import classes from "./UserList.module.css";
+
 const UserList = (props) => {
   return (
-    <div>
+    <Card className={classes.users}>
       <ul>
         {props.sendData.map((data) => (
-          <UserItem key={data.id} name={data.name} age={data.age}></UserItem>
+          <li key={data.id}>
+            {data.name} ({data.age} years old)
+          </li>
         ))}
       </ul>
-    </div>
+    </Card>
   );
 };
 
